@@ -6,7 +6,8 @@
         "../scss/blocks/_rock.scss",
         "../scss/vars/_animations.scss",
         "../scss/blocks/_hip-hop.scss",
-        "../scss/blocks/_pop.scss"
+        "../scss/blocks/_pop.scss",
+        "../scss/media/_media.scss"
     ],
     "names": [],
     "file": "style.min.css"
