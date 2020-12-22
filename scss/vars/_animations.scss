@@ -1,0 +1,8 @@
+.shadow{
+    animation-name: shadow;
+    animation-duration: 2s;
+}
+@keyframes shadow{
+    from{opacity: 0.3;}
+    to{opacity: 1;} 
+}

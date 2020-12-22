@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'FiraSansExtraCondensed';
+    src: url('../fonts/FiraSansExtraCondensed-Thin.ttf');
+    src: url('../fonts/FiraSansExtraCondensed-Thin.ttf') format('embedded-opentype'),
+    url('../fonts/FiraSansExtraCondensed-Thin.ttf') format('ttf'),
+    url('../fonts/FiraSansExtraCondensed-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'FiraSansExtraCondensed';
+    src: url('../fonts/FiraSansExtraCondensed-Light.ttf');
+    src: url('../fonts/FiraSansExtraCondensed-Light.ttf') format('embedded-opentype'),
+    url('../fonts/FiraSansExtraCondensed-Light.ttf') format('ttf'),
+    url('../fonts/FiraSansExtraCondensed-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'FiraSansExtraCondensed';
+    src: url('../fonts/FiraSansExtraCondensed-Regular.ttf');
+    src: url('../fonts/FiraSansExtraCondensed-Regular.ttf') format('embedded-opentype'),
+    url('../fonts/FiraSansExtraCondensed-Regular.ttf') format('ttf'),
+    url('../fonts/FiraSansExtraCondensed-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'FiraSansExtraCondensed';
+    src: url('../fonts/FiraSansExtraCondensed-Medium.ttf');
+    src: url('../fonts/FiraSansExtraCondensed-Medium.ttf') format('embedded-opentype'),
+    url('../fonts/FiraSansExtraCondensed-Medium.ttf') format('ttf'),
+    url('../fonts/FiraSansExtraCondensed-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'FiraSansExtraCondensed';
+    src: url('../fonts/FiraSansExtraCondensed-Bold.ttf');
+    src: url('../fonts/FiraSansExtraCondensed-Bold.ttf') format('embedded-opentype'),
+    url('../fonts/FiraSansExtraCondensed-Bold.ttf') format('ttf'),
+    url('../fonts/FiraSansExtraCondensed-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'FiraSansExtraCondensed';
+    src: url('../fonts/FiraSansExtraCondensed-ExtraBold.ttf');
+    src: url('../fonts/FiraSansExtraCondensed-ExtraBold.ttf') format('embedded-opentype'),
+    url('../fonts/FiraSansExtraCondensed-ExtraBold.ttf') format('ttf'),
+    url('../fonts/FiraSansExtraCondensed-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    }

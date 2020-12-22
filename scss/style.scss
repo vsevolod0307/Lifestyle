@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+    font-family: 'FiraSansExtraCondensed', sans-serif;
+}
+body{
+    margin: 0;
+}
+.container{
+    width: 1920px;
+    display: block;
+    margin: 0 auto;
+}
+
+@import "blocks/rock";
+@import "vars/animations";
+@import "blocks/hip-hop";
+@import "blocks/pop";
