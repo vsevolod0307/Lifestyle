@@ -13,7 +13,7 @@
     &_text{
         font-size: 30px;
         text-align: center;
-        width: 1400px;
+        width: 1100px;
         margin: auto;
         margin-top: 40px;
         font-weight: 400;
@@ -22,8 +22,8 @@
         position: relative;
         margin-top: 150px;
         overflow: hidden;
-        height: 900px;
-        width: 1920px;
+        width: 1350px;
+        height: 700px;
         box-shadow: 2px -2px 13px 0px #b6835e;
     }
     &_arrow{
@@ -66,8 +66,8 @@
         &_img{
             position: relative;
             img{
-                width: 1920px;
-                height: 900px;
+                width: 1350px;
+                height: 700px;
             }
         }
         &_info{
@@ -77,13 +77,13 @@
             left: 200px;
             width: 300px;
             text-align: left;
-            font-size: 25px;
+            font-size: 23px;
             color: #fff;
             font-weight: 100;
             background-color: rgba(0,0,0,0.6);
             border-radius: 5px;
             border: 2px solid;
-            padding: 30px;
+            padding: 25px;
             border-bottom: none;
         }
         &_wrap{

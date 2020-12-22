@@ -3,10 +3,12 @@
     font-family: 'FiraSansExtraCondensed', sans-serif;
 }
 body{
+    overflow-x: hidden;
     margin: 0;
+    width: 1350px;
 }
 .container{
-    width: 1920px;
+    width: 1350px;
     display: block;
     margin: 0 auto;
 }
