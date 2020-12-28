@@ -3,7 +3,6 @@
     font-family: 'FiraSansExtraCondensed', sans-serif;
 }
 body{
-    overflow-x: hidden;
     margin: 0 auto;
     width: 1350px;
 }
@@ -17,4 +16,4 @@ body{
 @import "vars/animations";
 @import "blocks/hip-hop";
 @import "blocks/pop";
-@import "media/media";
+@import "media/_media";
