@@ -239,4 +239,23 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    const btnForm = document.querySelector('.pop_form_btn');
+
+    btnForm.addEventListener('click', function(e) {
+        e.preventDefault();
+    });
+
+    const gamburger = document.querySelector('#menuToggle'),
+          menu = document.querySelector('.promo_header_menu');
+
+    gamburger.addEventListener('click', function(e) {
+        if(e.target.id != 'menu_close') {
+            menu.style.display = 'none';   
+        } else if (e.target.id == 'menu_close') {
+            menu.style.display = (menu.style.display != 'flex') ? 'flex' : 'none';
+        }
+        // menu.style.display = 'flex';
+        // header.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+    });
+
 });

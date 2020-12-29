@@ -127,4 +127,61 @@
             text-align: center;
         }
     }
+    &_form{
+        margin: 0 10%;
+        width: 80%;
+        margin-top: 50px;
+        border: 1px dotted black;
+        padding: 20px;
+        textarea{
+            resize: none;
+            width: 50%;
+            height: 160px;
+            margin: 10px 0 0 10px;
+            border: 1px solid #8b37c3;
+            border-radius: 5px;
+            padding: 15px;
+            outline: none;
+            font-size: 16px;
+        }
+        &_text{
+            display: flex;
+            justify-content: center;
+        }
+        &_input{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            input{
+                height: 40px;
+                border-radius: 5px;
+                border: 1px solid #8b37c3;
+                margin: 10px 0;
+                padding: 0 15px;
+                font-size: 16px;
+                outline: none;
+            }
+        }
+        &_btn{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            :hover{
+                box-shadow: 2px 0px 3px 5px #8b37c3;
+                font-size: 14px;
+            }
+            button{
+                width: 130px;
+                height: 40px;
+                border: none;
+                background-color: #8b37c3; 
+                border-radius: 18px;
+                color: #fff;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                outline: none;
+            }
+        }
+    }
 }

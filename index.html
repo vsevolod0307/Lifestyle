@@ -6,12 +6,17 @@
     <title>My portfolio</title>
     <link rel="icon" href="images/icons/8_audio_headphones.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/fonts.css">
 </head>
 <body>
     <div class="container">
         <section class="promo">
             <header class="promo_header">
+                <div id="menuToggle">
+                    <input id="menu_close" type="checkbox" />
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                </div>
                 <ul class="promo_header_menu">
                     <div class="promo_header_hover"><li class="promo_header_link"><a href="#">Rock</a></li></div>
                     <div class="promo_header_hover"><li class="promo_header_link"><a href="#">Hip-Hop</a></li></div>
@@ -20,7 +25,7 @@
                 </ul>
             </header>
             <div class="promo_title">Rock</div>
-            <div class="promo_descr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. In incidunt ipsum enim iure. Nesciunt ipsa consectetur tempora maiores, magni odit rerum sit nobis, dicta, illo obcaecati iusto nihil eos incidunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, voluptates veniam magnam totam quibusdam expedita dolores similique odio ad amet perspiciatis, alias dolor adipisci, illum molestias quam tenetur porro.Lorem ipsum</div>
+            <div class="promo_descr"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In incidunt ipsum enim iure. Nesciunt ipsa consectetur tempora maiores, magni odit rerum sit nobis, dicta, illo obcaecati iusto nihil eos incidunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, voluptates veniam magnam totam quibusdam expedita dolores similique odio ad amet perspiciatis, alias dolor adipisci, illum molestias quam tenetur porro.Lorem ipsum</p></div>
             <div class="promo_wrapper">
                 <div class="promo_arrow_prev">&laquo;</div>
                 <div class="promo_arrow_next">&raquo;</div>
@@ -72,7 +77,7 @@
                     <div class="hip_item">
                         <div class="hip_text">
                             <div class="hip_text_title">Eminem</div>
-                            <div class="hip_text_descr">American rapper, record producer, composer and actor. In addition to his solo career, Marshall was also a member of the band D12 and the hip-hop duo Bad Meets Evil. Eminem is one of the best-selling music artists in the world, as well as the best-selling artist of the 2000s.</div>
+                            <div class="hip_text_descr"><span>American</span> rapper, record producer, composer and actor. In addition to his solo career, Marshall was also a member of the band D12 and the hip-hop duo Bad Meets Evil. Eminem is one of the best-selling music artists in the world, as well as the best-selling artist of the 2000s.</div>
                         </div>
                     </div>
                     <div class="hip_item">
@@ -198,6 +203,17 @@
                     <div class="pop_arrow_next">&gt;</div>
                 </div>
             </div>
+            <form action="#" class="pop_form">
+                <div class="pop_form_text">
+                    <div class="pop_form_input">
+                        <input placeholder="Введите имя" type="text">
+                        <input placeholder="Введите E-mail" type="email">
+                        <input placeholder="Введите телефон" type="tel">
+                    </div>
+                    <textarea placeholder="Здесь должен быть текст" maxlength="300" type="text"></textarea>
+                </div>
+                    <div class="pop_form_btn"><button>Отправить</button></div>
+            </form>
         </section>
     </div>
     <script src="js/script.js"></script>

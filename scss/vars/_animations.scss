@@ -6,3 +6,59 @@
     from{opacity: 0.3;}
     to{opacity: 1;} 
 }
+
+#menuToggle {
+    z-index: -2;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #menuToggle input {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0; /* hide input */
+    z-index: 1; /* top of the menu */
+  }
+  
+  #menuToggle span{
+    display: none;
+    width: 55px;
+    height: 8px;
+    margin: 5px;
+    background: #fff;
+    border-radius: 4px;
+    -webkit-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+    -moz-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+    -ms-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+    -o-transition: all .5s cubic-bezier(.08,.81,.87,.71);
+    transition: all .5s cubic-bezier(.08,.81,.87,.71);
+  }
+  
+  #span1 {
+    transform-origin: 4px 0px;
+  }
+  
+  #span3 {
+    transform-origin: bottom right;
+  }
+  
+  #menuToggle input:checked ~ #span1 {
+    background-color: #fff;
+    transform: rotate(45deg) translate(8px);
+  }
+  #menuToggle input:checked ~ #span2 {
+    background-color: #fff;
+    transform: rotate(495deg) translate(4px);   
+  }
+  #menuToggle input:checked ~ #span3 {
+    background-color: #fff;
+    transform: rotate(45deg);
+    opacity: 0;
+  }
