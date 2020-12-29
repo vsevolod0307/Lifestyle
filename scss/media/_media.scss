@@ -1,6 +1,6 @@
 @media (max-width: 1024px){
     .container, body{
-        width: 1007px;
+        width: 1024px;
     }
     .promo{
         &_arrow_next, &_arrow_prev{
@@ -84,9 +84,9 @@
         }
         &_carousel{
             &_img {
-                width: 1007px;
+                width: 1024px;
                 img{
-                    width: 1007px;
+                    width: 1024px;
                     height: 500px;
                 }
             }
@@ -109,7 +109,7 @@
             }
         }  
         &_wrapper{
-            width: 1007px;
+            width: 1024px;
             height: 500px;
             margin-top: 50px;
         }
@@ -138,7 +138,7 @@
 }
 @media (max-width: 768px){
     .container, body{
-        width: 751px;
+        width: 768px;
     }
     .promo{
         padding-bottom: 50px;
@@ -230,9 +230,9 @@
                 font-size: 40px;
             }
             &_img {
-                width: 751px;
+                width: 768px;
                 img{
-                    width: 751px;
+                    width: 768px;
                     height: 400px;
                 }
             }
@@ -254,7 +254,7 @@
             }
         }  
         &_wrapper{
-            width: 751px;
+            width: 768px;
             height: 400px;
         }
         &_arrow_prev, &_arrow_next{
@@ -268,7 +268,7 @@
 }
 @media (max-width: 425px) {
     .container, body{
-        width: 408px;
+        width: 425px;
     }
     .promo{
         padding-bottom: 50px;
@@ -290,18 +290,18 @@
         &_header{
             height: 60px;
             &_hover{
-                height: 60px;
+                height: 80px;
             }
             &_menu{
                 display: none;
                 flex-direction: column;
-                position: absolute;
+                position: fixed;
                 top: 0;
                 left: 0;
                 background-color: rgba(0, 0, 0, 0.7);
                 z-index: 2;
                 width: 70%;
-                height: 100%;
+                height: 90%;
                 padding-top: 60px;
             }
         }
@@ -359,12 +359,21 @@
                 height: 200px;
             }
         }
-        &_tablink{
-            font-size: 15px;
-            padding: 0px 10px;
-        }
         &_tabnav{
             padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+        &_tablink{
+            font-size: 22px;
+            padding: 0px 6px;
+            border-bottom: 4px solid  rgb(163, 17, 17);
+            border-right: none;
+            width: 100%;
+            margin-bottom: 10px;
         }
         &_text{
             &_descr{
@@ -390,9 +399,9 @@
                 top: 15px;
             }
             &_img {
-                width: 408px;
+                width: 425px;
                 img{
-                    width: 408px;
+                    width: 425px;
                     height: 200px;
                 }
             }
@@ -419,7 +428,7 @@
             }
         }  
         &_wrapper{
-            width: 408px;
+            width: 425px;
             height: 200px;
         }
         &_arrow_prev, &_arrow_next{
@@ -468,7 +477,7 @@
 }
 @media (max-width: 375px) {
     .container, body{
-        width: 358px;
+        width: 375px;
     }
     .promo{
         padding-bottom: 50px;
@@ -501,7 +510,7 @@
                 background-color: rgba(0, 0, 0, 0.7);
                 z-index: 2;
                 width: 70%;
-                height: 100%;
+                height: 90%;
                 padding-top: 60px;
             }
         }
@@ -591,9 +600,9 @@
                 top: 15px;
             }
             &_img {
-                width: 358px;
+                width: 375px;
                 img{
-                    width: 358px;
+                    width: 375px;
                     height: 200px;
                 }
             }
@@ -620,7 +629,7 @@
             }
         }  
         &_wrapper{
-            width: 358px;
+            width: 375px;
             height: 200px;
         }
         &_arrow_prev, &_arrow_next{
@@ -668,7 +677,7 @@
 }
 @media (max-width: 320px) {
     .container, body{
-        width: 303px;
+        width: 320px;
     }
     .promo{
         &_content{
@@ -686,32 +695,15 @@
             left: inherit;
         }
     }
-    .hip{
-        &_tabnav{
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            align-items: center;
-        }
-        &_tablink{
-            font-size: 22px;
-            padding: 0px 6px;
-            border-bottom: 4px solid  rgb(163, 17, 17);
-            border-right: none;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-    }
     .pop{
         &_wrapper{
-            width: 303px;
+            width: 320px;
         }
         &_carousel{
             &_img{
-                width: 303px;
+                width: 320px;
                 img{
-                    width: 303px;
+                    width: 320px;
                 }
             }
         }

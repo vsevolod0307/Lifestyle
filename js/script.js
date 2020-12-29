@@ -249,7 +249,7 @@ window.addEventListener('DOMContentLoaded', function() {
           menu = document.querySelector('.promo_header_menu');
 
     gamburger.addEventListener('click', function(e) {
-        if(e.target.id != 'menu_close') {
+        if(e.target.id != 'menu_close' && e.target.id != 'promo') {
             menu.style.display = 'none';   
         } else if (e.target.id == 'menu_close') {
             menu.style.display = (menu.style.display != 'flex') ? 'flex' : 'none';
