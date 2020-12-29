@@ -302,7 +302,7 @@
                 z-index: 2;
                 width: 70%;
                 height: 100%;
-                margin-top: 60px;
+                padding-top: 60px;
             }
         }
         &_content{
@@ -426,6 +426,18 @@
             height: 200px;
             padding: 0 10px;
             font-size: 60px;
+        }
+    }
+    &_form{
+        textarea{
+            width: 100%;
+            margin: 0;
+        }
+        &_text{
+            flex-direction: column;
+        }
+        &_input{
+            width: 100%;
         }
     }
     .timer{
@@ -615,6 +627,18 @@
             height: 200px;
             padding: 0 10px;
             font-size: 60px;
+        }
+    }
+    &_form{
+        textarea{
+            width: 100%;
+            margin: 0;
+        }
+        &_text{
+            flex-direction: column;
+        }
+        &_input{
+            width: 100%;
         }
     }
     .timer{
