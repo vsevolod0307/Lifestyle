@@ -22,8 +22,8 @@
         position: relative;
         margin-top: 150px;
         overflow: hidden;
-        width: 1350px;
-        height: 700px;
+        width: 100%;
+        height: auto;
         box-shadow: 2px -2px 13px 0px #b6835e;
     }
     &_arrow{
@@ -42,7 +42,7 @@
         display: flex;
         align-items: center;
         z-index: 3;
-        height: 900px;
+        height: 100%;
         padding: 0 30px;
         cursor: pointer;
     }
@@ -52,6 +52,9 @@
     }
     &_carousel{
         display: flex;
+        &_block{
+            width: inherit;
+        }
         &_title{
             position: absolute;
             top: 40px;
@@ -65,8 +68,9 @@
         }
         &_img{
             position: relative;
+            width: auto;
             img{
-                width: 1350px;
+                width: inherit;
                 height: 700px;
             }
         }
