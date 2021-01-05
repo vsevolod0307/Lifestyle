@@ -18,11 +18,12 @@
                     <span id="span3"></span>
                 </div>
                 <ul class="promo_header_menu">
-                    <div class="promo_header_hover"><li class="promo_header_link"><a href="#">Work</a></li></div>
-                    <div class="promo_header_hover"><li class="promo_header_link"><a href="#">Family</a></li></div>
-                    <div class="promo_header_hover"><li class="promo_header_link"><a href="#">Adventures</a></li></div>
-                    <div class="promo_header_hover"><li class="promo_header_link"><a href="#">Addition</a></li></div>
+                    <div class="promo_header_hover" id="work"><li class="promo_header_link"><a href="#">Work</a></li></div>
+                    <div class="promo_header_hover" id="family"><li class="promo_header_link"><a href="#">Family</a></li></div>
+                    <div class="promo_header_hover" id="adventures"><li class="promo_header_link"><a href="#">Adventures</a></li></div>
+                    <div class="promo_header_hover" id="addition"><li class="promo_header_link"><a href="#">Addition</a></li></div>
                 </ul>
+                <button class="promo_header_btn" data-modal>Contact us</button>
             </header>
             <div class="time">
                 <div class="time_round"></div>
@@ -129,6 +130,7 @@
                     </div>
                 </div>
             </div>
+                <button class="hip_btn" data-modal>Contact us</button>
             <div class="timer">
                 <div class="timer_block">
                     <div id="days">16</div>
@@ -160,56 +162,7 @@
                 <div class="pop_arrow">
                     <div class="pop_arrow_prev">&lt;</div>
                 </div>
-                <div class="pop_carousel">
-                    <div class="pop_carousel_block">
-                        <div class="pop_carousel_img">
-                            <img src="images/bg/bg_carousel_1.jpg" alt="bg_carousel_1">
-                            <div class="pop_carousel_title">Work</div>
-                            <div class="pop_carousel_info">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est assumenda enim exercitationem nihil molestiae consequatur quaerat? Quod nemo quibusdam aliquid impedit voluptatibus</div>
-                            <div class="pop_carousel_wrap">
-                                <div class="pop_carousel_closein">close</div>
-                                <button class="pop_carousel_btn">info</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pop_carousel_block">
-                        <div class="pop_carousel_img">
-                            <img src="images/bg/bg_carousel_2.jpg" alt="bg_carousel_2">
-                            <div class="pop_carousel_title">Family</div>
-                            <div class="pop_carousel_info">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est assumenda enim exercitationem nihil molestiae consequatur quaerat? Quod nemo quibusdam aliquid impedit voluptatibus</div>
-                            <div class="pop_carousel_wrap">
-                                <div class="pop_carousel_closein">close</div>
-                                <button class="pop_carousel_btn">info</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pop_carousel_block">
-                        <div class="pop_carousel_img">
-                            <img src="images/bg/bg_carousel_3.jpg" alt="bg_carousel_3">
-                            <div class="pop_carousel_title">Animals</div>
-                            <div class="pop_carousel_info">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est assumenda enim exercitationem nihil molestiae consequatur quaerat? Quod nemo quibusdam aliquid impedit voluptatibus</div>
-                            <div class="pop_carousel_wrap">
-                                <div class="pop_carousel_closein">close</div>
-                                <button class="pop_carousel_btn">info</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pop_carousel_block">
-                        <div class="pop_carousel_img">
-                            <img src="images/bg/bg_carousel_4.jpg" alt="bg_carousel_4">
-                            <div class="pop_carousel_title">Adventures</div>
-                            <div class="pop_carousel_info">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est assumenda enim exercitationem nihil molestiae consequatur quaerat? Quod nemo quibusdam aliquid impedit voluptatibus</div>
-                            <div class="pop_carousel_wrap">
-                                <div class="pop_carousel_closein">close</div>
-                                <button class="pop_carousel_btn">info</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="pop_carousel"></div>
                 <div class="pop_arrow">
                     <div class="pop_arrow_next">&gt;</div>
                 </div>
@@ -226,6 +179,18 @@
                     <div class="pop_form_btn"><button>Отправить</button></div>
             </form>
         </section>
+    </div>
+    <div class="modal">
+        <div class="modal_contact">
+            <div class="modal_contact_close" data-close>&times;</div>
+            <div class="modal_contact_title">Заполните ваши данные</div>
+            <form class="modal_contact_form" action="#">
+                <input type="text" placeholder="Ваше имя">
+                <input type="tel" placeholder="Ваш телефон">
+                <input type="email" placeholder="Ваш E-mail">
+                <button class="modal_contact_btn">Подтвердить</button>
+            </form>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

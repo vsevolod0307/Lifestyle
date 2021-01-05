@@ -84,12 +84,27 @@
             color: rgb(255, 255, 255);
         }
     }
+    &_btn{
+        display: block;
+        margin: 50px auto;
+        width: 250px;
+        height: 70px;
+        background-color: #8b37c3;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 26px;
+        text-transform: uppercase;
+        text-shadow: 0 0 black;
+        cursor: pointer;
+        z-index: 10;
+    }
 }
 .timer{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 50px;
     &_block{
         display: flex;
         justify-content: center;

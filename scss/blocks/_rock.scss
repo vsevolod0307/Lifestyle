@@ -12,8 +12,12 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            position: fixed;
+            z-index: 7;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 101%;
             :hover{
                 background-color: rgb(163, 17, 17);
                 cursor: pointer;
@@ -36,6 +40,21 @@
                 color: #fff;
                 text-decoration: none;
             }
+        }
+        &_btn{
+            position: absolute;
+            left: 100px;
+            width: 150px;
+            height: 40px;
+            background-color: #8b37c3;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 20px;
+            text-transform: uppercase;
+            text-shadow: 0 0 black;
+            cursor: pointer;
+            z-index: 10;
         }
     }
     &_wrapper{

@@ -1,4 +1,5 @@
 // "use strict";
+/*jshint esversion: 6 */
 
 window.addEventListener('DOMContentLoaded', function() {
     
@@ -34,32 +35,102 @@ window.addEventListener('DOMContentLoaded', function() {
 
     function onSlide(n){
         showSlides(slideIndex += n);
+        slideContent[slideIndex - 1].classList.add('shadow');
     }
 
     prev.addEventListener('click', () => {
         onSlide(-1);
-        slideContent[slideIndex - 1].classList.add('shadow')
     });
 
     next.addEventListener('click', () => {
         onSlide(1);
-        slideContent[slideIndex - 1].classList.add('shadow')
     });
 
     document.addEventListener('keydown', function(e) {
         if(e.key == 'ArrowLeft') {
             onSlide(-1);
-            slideContent[slideIndex - 1].classList.add('shadow');
             carouselTranslatePrev();
         }
 
         if(e.key == 'ArrowRight') {
             onSlide(1);
-            slideContent[slideIndex - 1].classList.add('shadow');
             carouselTranslateNext();
         }
     });
-    
+
+    slidelist = setInterval(function autoOnSlide() {
+        onSlide(1);
+    }, 4000);
+
+    class Slide {
+        constructor(src, alt, title, info, btnClose, btnInfo, parentSelector) {
+            this.src = src;
+            this.alt = alt;
+            this.title = title;
+            this.info = info;
+            this.btnClose = btnClose;
+            this.btnInfo = btnInfo;
+            this.parent = document.querySelector(parentSelector);
+        }
+
+        render() {
+            const elem = document.createElement('div');
+            elem.classList.add('pop_carousel_block');
+            elem.innerHTML = `
+                <div class="pop_carousel_img">
+                    <img src=${this.src} alt=${this.alt}>
+                    <div class="pop_carousel_title">${this.title}</div>
+                    <div class="pop_carousel_info">${this.info}</div>
+                    <div class="pop_carousel_wrap">
+                        <div class="pop_carousel_closein">${this.btnClose}</div>
+                        <button class="pop_carousel_btn">${this.btnInfo}</button>
+                    </div>
+                </div>
+            `;
+            this.parent.append(elem);
+        }
+    }
+
+    new Slide(
+        '"images/bg/bg_carousel_1.jpg"',
+        '"bg_carousel_1"',
+        'Work',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est assumenda enim exercitationem nihil molestiae consequatur quaerat? Quod nemo quibusdam aliquid impedit voluptatibus',
+        'close',
+        'info',
+        '.pop_carousel'
+    ).render();
+
+    new Slide(
+        '"images/bg/bg_carousel_2.jpg"',
+        '"bg_carousel_2"',
+        'Family',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est assumenda enim exercitationem nihil molestiae consequatur quaerat? Quod nemo quibusdam aliquid impedit voluptatibus',
+        'close',
+        'info',
+        '.pop_carousel'
+    ).render();
+
+    new Slide(
+        '"images/bg/bg_carousel_3.jpg"',
+        '"bg_carousel_3"',
+        'Animals',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est assumenda enim exercitationem nihil molestiae consequatur quaerat? Quod nemo quibusdam aliquid impedit voluptatibus',
+        'close',
+        'info',
+        '.pop_carousel'
+    ).render();
+
+    new Slide(
+        '"images/bg/bg_carousel_4.jpg"',
+        '"bg_carousel_4"',
+        'Adventures',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis est assumenda enim exercitationem nihil molestiae consequatur quaerat? Quod nemo quibusdam aliquid impedit voluptatibus',
+        'close',
+        'info',
+        '.pop_carousel'
+    ).render();
+
     const tabContent = document.querySelectorAll('.hip_tabcontent'),
           tabNav = document.querySelector('.hip_tabnav'),
           tabLink = document.querySelectorAll('.hip_tablink');
@@ -259,4 +330,70 @@ window.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('touchstart', (e) => {
         console.log(e.target);
     });
+
+    const idWork = document.querySelector('#work'),
+          idFamily = document.querySelector('#family'),
+          idAdventures = document.querySelector('#adventures');
+        //   idAddition = document.querySelector('#addition');
+
+    idWork.addEventListener('click', () => {
+        document.documentElement.scrollTop = 276;
+    });
+
+    idFamily.addEventListener('click', () => {
+        document.documentElement.scrollTop = 1475;
+    });
+
+    idAdventures.addEventListener('click', () => {
+        document.documentElement.scrollTop = 2875;
+    });
+
+    // idAddition.addEventListener('click', () => {
+    //     document.documentElement.scrollTop = 276;
+    // });
+
+    const contactModalBtn = document.querySelectorAll('[data-modal]'),
+          contactModal = document.querySelector('.modal_contact'),
+          contactModalClose = document.querySelector('[data-close]');
+
+    function openModalContact() {
+            contactModal.style.display = 'flex';
+            document.body.style.overflowY = 'hidden';
+            clearInterval(modalContactTimer);
+    }
+
+    contactModalBtn.forEach(btn => {
+        btn.addEventListener('click', openModalContact);
+    });
+
+    function closeModalContact() {
+        contactModal.style.display = 'none';
+        document.body.style.overflowY = '';
+    }
+
+    contactModalClose.addEventListener('click', closeModalContact);
+
+    contactModal.addEventListener('click', (e) => {
+        if(e.target === contactModal) {
+            closeModalContact();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if(e.code === 'Escape' && contactModal.style.display === 'flex') {
+            closeModalContact();
+        }
+    });
+
+    const modalContactTimer = setTimeout(openModalContact, 6000);
+
+    function showModalScroll() {
+        if(window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
+            openModalContact();
+            window.removeEventListener('scroll', showModalScroll);
+        }
+    }
+
+    window.addEventListener('scroll', showModalScroll);
+
 });
