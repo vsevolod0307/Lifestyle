@@ -57,25 +57,27 @@ window.addEventListener('DOMContentLoaded', function() {
             carouselTranslateNext();
         }
     });
-
-    slidelist = setInterval(function autoOnSlide() {
-        onSlide(1);
-    }, 4000);
-
     class Slide {
-        constructor(src, alt, title, info, btnClose, btnInfo, parentSelector) {
+        constructor(src, alt, title, info, btnClose, btnInfo, parentSelector, ...classes) {
             this.src = src;
             this.alt = alt;
             this.title = title;
             this.info = info;
             this.btnClose = btnClose;
             this.btnInfo = btnInfo;
+            this.classes = classes;
             this.parent = document.querySelector(parentSelector);
         }
 
         render() {
             const elem = document.createElement('div');
-            elem.classList.add('pop_carousel_block');
+            if(this.classes.length === 0) {
+                this.elem = 'pop_carousel_block';
+                elem.classList.add(this.elem);
+            } else {
+                this.classes.forEach(className => elem.classList.add(className));
+            }
+
             elem.innerHTML = `
                 <div class="pop_carousel_img">
                     <img src=${this.src} alt=${this.alt}>
@@ -129,6 +131,144 @@ window.addEventListener('DOMContentLoaded', function() {
         'close',
         'info',
         '.pop_carousel'
+    ).render();
+
+    const forms = document.querySelectorAll('form');
+
+    console.log(forms);
+
+    const message = {
+        loading: 'Загрузка...',
+        success: 'Спасибо! Скоро мы с вами свяжемся',
+        failure: 'Что то пошло не так...'
+    };
+
+    forms.forEach(item => {
+        postData(item);
+    });
+
+    function postData(form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const statusMessage = document.createElement('div');
+            statusMessage.classList.add('modal_contact_status');
+            statusMessage.textContent = message.loading;
+            form.append(statusMessage);
+
+            const r = new XMLHttpRequest();
+            r.open('POST', 'server.php');
+
+            r.setRequestHeader('Content-type', 'application/json');
+            const formData = new FormData(form);
+
+            const obj = {};
+            formData.forEach(function(value, key) {
+                obj[key] = value;
+            });
+
+            const json = JSON.stringify(obj);
+
+            r.send(json);
+
+            r.addEventListener('load', () => {
+                if(r.status === 200) {
+                    console.log(r.response);
+                    showThanksModal(message.success);
+                    form.reset();
+                    statusMessage.remove();
+                } else {
+                    showThanksModal(message.failure);
+                }
+            });
+        });
+    }
+
+    function showThanksModal(message) {
+        const prevModalContact = document.querySelector('.modal_contact_form');
+
+        prevModalContact.style.visibility = 'hidden';
+        openModalContact();
+
+        const thanksModal = document.createElement('div');
+        thanksModal.classList.add('modal_contact_form');
+        thanksModal.style.zIndex = '100';
+        contactModal.style.height = '100px';
+        thanksModal.innerHTML = `
+            <div class="modal_contact_undertitle">${message}</div>
+            <div class="modal_contact_close" data-close>&times;</div>
+        `;
+        document.querySelector('.modal_contact').append(thanksModal);
+        setTimeout(() => {
+            thanksModal.remove();
+            contactModal.style.height = '';
+            prevModalContact.style.visibility = '';
+            closeModalContact();
+        } ,2000);
+    }
+    class Tab {
+        constructor(title, descr, src, alt, parentSelector, ...classes) {
+            this.title = title;
+            this.descr = descr;
+            this.src = src;
+            this.alt = alt;
+            this.classes = classes;
+            this.parent = document.querySelector(parentSelector);
+        }
+
+        render() {
+            const elementTab = document.createElement('div');
+            if(this.classes.length === 0) {
+                this.elementTab = 'hip_tabcontent';
+                elementTab.classList.add(this.elementTab);
+            } else {
+                this.classes.forEach(className => elementTab.classList.add(className));
+            }
+            elementTab.innerHTML = `
+            <div class="hip_item">
+                <div class="hip_text">
+                    <div class="hip_text_title">${this.title}</div>
+                    <div class="hip_text_descr">${this.descr}</div>
+                </div>
+            </div>
+            <div class="hip_item">
+                <div class="hip_img"><img src="${this.src}" alt="${this.alt}"></div>
+            </div>
+            `;
+            this.parent.append(elementTab);
+        }
+    }
+
+    new Tab(
+        'work',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, fugiat? Consequuntur ab ex eaque? Consequuntur explicabo laborum odit vero, numquam commodi eum quasi sint delectus, culpa repudiandae, pariatur non sequi!',
+        'images/bg/bg_carousel_1.jpg',
+        'bg_carousel',
+        '.hip_tabs'
+    ).render();
+
+    new Tab(
+        'family',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, fugiat? Consequuntur ab ex eaque? Consequuntur explicabo laborum odit vero, numquam commodi eum quasi sint delectus, culpa repudiandae, pariatur non sequi!',
+        'images/bg/bg_carousel_2.jpg',
+        'bg_carousel',
+        '.hip_tabs'
+    ).render();
+
+    new Tab(
+        'animals',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, fugiat? Consequuntur ab ex eaque? Consequuntur explicabo laborum odit vero, numquam commodi eum quasi sint delectus, culpa repudiandae, pariatur non sequi!',
+        'images/bg/bg_carousel_3.jpg',
+        'bg_carousel',
+        '.hip_tabs'
+    ).render();
+
+    new Tab(
+        'adventures',
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, fugiat? Consequuntur ab ex eaque? Consequuntur explicabo laborum odit vero, numquam commodi eum quasi sint delectus, culpa repudiandae, pariatur non sequi!',
+        'images/bg/bg_carousel_4.jpg',
+        'bg_carousel',
+        '.hip_tabs'
     ).render();
 
     const tabContent = document.querySelectorAll('.hip_tabcontent'),
@@ -353,8 +493,7 @@ window.addEventListener('DOMContentLoaded', function() {
     // });
 
     const contactModalBtn = document.querySelectorAll('[data-modal]'),
-          contactModal = document.querySelector('.modal_contact'),
-          contactModalClose = document.querySelector('[data-close]');
+          contactModal = document.querySelector('.modal_contact');
 
     function openModalContact() {
             contactModal.style.display = 'flex';
@@ -371,10 +510,8 @@ window.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflowY = '';
     }
 
-    contactModalClose.addEventListener('click', closeModalContact);
-
     contactModal.addEventListener('click', (e) => {
-        if(e.target === contactModal) {
+        if(e.target === contactModal || e.target.getAttribute('data-close') == '') {
             closeModalContact();
         }
     });

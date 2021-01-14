@@ -85,50 +85,6 @@
                     <li class="hip_tablink">Animals</li>
                     <li class="hip_tablink">Adventures</li>
                 </ul>
-                <div class="hip_tabcontent">
-                    <div class="hip_item">
-                        <div class="hip_text">
-                            <div class="hip_text_title">Work</div>
-                            <div class="hip_text_descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, fugiat? Consequuntur ab ex eaque? Consequuntur explicabo laborum odit vero, numquam commodi eum quasi sint delectus, culpa repudiandae, pariatur non sequi!</div>
-                        </div>
-                    </div>
-                    <div class="hip_item">
-                        <div class="hip_img"><img src="images/bg/bg_carousel_1.jpg" alt="bg_carousel"></div>
-                    </div>
-                </div>
-                <div class="hip_tabcontent">
-                    <div class="hip_item">
-                        <div class="hip_img"><img src="images/bg/bg_carousel_2.jpg" alt="bg_carousel"></div>
-                    </div>
-                    <div class="hip_item">
-                        <div class="hip_text">
-                            <div class="hip_text_title">Animals</div>
-                            <div class="hip_text_descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, fugiat? Consequuntur ab ex eaque? Consequuntur explicabo laborum odit vero, numquam commodi eum quasi sint delectus, culpa repudiandae, pariatur non sequi!</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hip_tabcontent">
-                    <div class="hip_item">
-                        <div class="hip_text">
-                            <div class="hip_text_title">Family</div>
-                            <div class="hip_text_descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, fugiat? Consequuntur ab ex eaque? Consequuntur explicabo laborum odit vero, numquam commodi eum quasi sint delectus, culpa repudiandae, pariatur non sequi!</div>
-                        </div>
-                    </div>
-                    <div class="hip_item">
-                        <div class="hip_img"><img src="images/bg/bg_carousel_3.jpg" alt="bg_carousel"></div>
-                    </div>
-                </div>
-                <div class="hip_tabcontent">
-                    <div class="hip_item">
-                        <div class="hip_img"><img src="images/bg/bg_carousel_4.jpg" alt="bg_carousel"></div>
-                    </div>
-                    <div class="hip_item">
-                        <div class="hip_text">
-                            <div class="hip_text_title">Adventures</div>
-                            <div class="hip_text_descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, fugiat? Consequuntur ab ex eaque? Consequuntur explicabo laborum odit vero, numquam commodi eum quasi sint delectus, culpa repudiandae, pariatur non sequi!</div>
-                        </div>
-                    </div>
-                </div>
             </div>
                 <button class="hip_btn" data-modal>Contact us</button>
             <div class="timer">
@@ -167,27 +123,26 @@
                     <div class="pop_arrow_next">&gt;</div>
                 </div>
             </div>
-            <form action="#" class="pop_form">
+            <div class="pop_form">
                 <div class="pop_form_text">
-                    <div class="pop_form_input">
-                        <input placeholder="Введите имя" type="text">
-                        <input placeholder="Введите E-mail" type="email">
-                        <input placeholder="Введите телефон" type="tel">
-                    </div>
-                    <textarea placeholder="Здесь должен быть текст" maxlength="300" type="text"></textarea>
+                    <form class="pop_form_input" action="#">
+                        <input type="text" placeholder="Введите имя" name="name">
+                        <input type="tel" placeholder="Введите телефон" name="phone">
+                        <input type="email" placeholder="Введите E-mail" name="email">
+                        <button class="pop_form_btn">Отправить</button>
+                    </form>
                 </div>
-                    <div class="pop_form_btn"><button>Отправить</button></div>
-            </form>
+            </div>
         </section>
     </div>
     <div class="modal">
         <div class="modal_contact">
             <div class="modal_contact_close" data-close>&times;</div>
-            <div class="modal_contact_title">Заполните ваши данные</div>
             <form class="modal_contact_form" action="#">
-                <input type="text" placeholder="Ваше имя">
-                <input type="tel" placeholder="Ваш телефон">
-                <input type="email" placeholder="Ваш E-mail">
+                <div class="modal_contact_title">Заполните ваши данные</div>
+                <input type="text" placeholder="Ваше имя" name="name">
+                <input type="tel" placeholder="Ваш телефон" name="phone">
+                <input type="email" placeholder="Ваш E-mail" name="email">
                 <button class="modal_contact_btn">Подтвердить</button>
             </form>
         </div>
